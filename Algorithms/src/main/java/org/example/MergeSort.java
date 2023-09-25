@@ -4,7 +4,7 @@ public class MergeSort {
     //Denne funksjonen deler arrayet som sendes inn
     //For så å kalle Merge funksjonen som sorterer
     //og setter sammen alle de delte arrayene. Slik
-    //at vår første array i utgangspunktet blir sortert
+    //at vår første array i utgangspunktet blir sortert.
     public static void mergeSort(int[] array){
         int length = array.length;
         if (length <= 1) return; //Vi deler ikke array hvis lengde er 1 <
