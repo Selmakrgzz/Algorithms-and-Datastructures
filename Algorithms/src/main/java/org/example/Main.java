@@ -33,5 +33,10 @@ public class Main {
         for (int i = 0; i < array3.length; i++){
             System.out.print(array3[i]+ " ");
         }
+
+        int[] array4 = {3,5,2,7,9,7,5,3,1,8};
+        System.out.println("\nLinearSearch:");
+        System.out.println(LinearSearch.linearSearch(array4, 7));
+
     }
 }
