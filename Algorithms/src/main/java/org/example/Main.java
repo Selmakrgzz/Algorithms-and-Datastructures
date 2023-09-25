@@ -25,5 +25,13 @@ public class Main {
         for (int i = 0; i < array2.length; i++){
             System.out.print(array2[i]+ " ");
         }
+
+        int[] array3 = {3,5,2,7,9,7,5,3,1,8};
+        System.out.println("\nInsertionSort:");
+        InsertionSort.insertionSort(array3);
+
+        for (int i = 0; i < array3.length; i++){
+            System.out.print(array3[i]+ " ");
+        }
     }
 }
