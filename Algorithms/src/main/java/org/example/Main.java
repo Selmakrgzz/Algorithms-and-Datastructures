@@ -14,8 +14,16 @@ public class Main {
         System.out.println("\nQuickSort:");
         QuickSort.quickSort(array1, 0, array1.length-1);
 
-        for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array1.length; i++){
             System.out.print(array1[i]+ " ");
+        }
+
+        int[] array2 = {3,5,2,7,9,7,5,3,1,8};
+        System.out.println("\nBubbleSort:");
+        BubbleSort.bubbleSort(array2);
+
+        for (int i = 0; i < array2.length; i++){
+            System.out.print(array2[i]+ " ");
         }
     }
 }

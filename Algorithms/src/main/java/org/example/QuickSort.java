@@ -22,7 +22,7 @@ public class QuickSort {
         int i = start - 1;
 
         //Kjører gjennom arrayet utenom piviot
-        for (int j = start; j < end - 1 ; j++){
+        for (int j = start; j <= end - 1 ; j++){
 
             //Sjekker om elementet er mindre enn piviot
             //og bytter om dersom det stemmer
