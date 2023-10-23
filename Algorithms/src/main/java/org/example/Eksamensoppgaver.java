@@ -76,7 +76,7 @@ public class Eksamensoppgaver {
         }
     }
 
-    public static int[] snitt(int[] a, int[] b){
+    public static int[] snitt(int[] a, int[] b){ // Eksamen 2014 konte
         int length = Math.min(a.length, b.length);
         int[] output = new int[length];
 
@@ -118,6 +118,64 @@ public class Eksamensoppgaver {
         return "Utskrift: " +antall+ ": " +Arrays.toString(output);
     }
 
+    public static String omorganisert(char[] a){ // Eksamen 2016
+        int antall = 0;
+        for (int i = 0; i < a.length-1; i++){
+            for (int j = 0; j < a.length-i-1; j++){
+                if (a[j] < a[j+1]){
+                    char temp = a[j+1];
+                    a[j+1] = a[j];
+                    a[j] = temp;
+                }
+            }
+            if (a[antall] > 'Z'){
+                antall++;
+            }
+        }
+        return "Utskrift: "+antall+ " :"+Arrays.toString(a);
+    }
+
+    public static int finn(int[] a, int verdi){ // Eksamen 2016 konte
+        int indeks = 0;
+        for (int i = 0; i < a.length; i++){
+            indeks = i;
+            if (a[i] == verdi){
+                return indeks;
+            } else {
+                if (verdi < a[i]){
+                    return -(indeks+1);
+                }
+            }
+        }
+        return indeks;
+    }
+
+    public static int finnMedBinarySearch(int[] a, int verdi){
+        int venstre = 0;
+        int hoyre = a.length-1;
+        while (venstre <= hoyre){
+            int m = hoyre/2;
+            int midtverdi = a[m];
+
+            if (verdi>midtverdi){
+                venstre = m+1;
+            } else if (verdi<midtverdi) {
+                hoyre = m-1;
+            } else {
+                break;
+            }
+        }
+        if (venstre > hoyre){
+            return -(venstre+1);
+        }
+
+        while (venstre > 0 && a[venstre-1] == venstre){
+            venstre--;
+        }
+        return venstre;
+    }
+
+
     public static void main(String []args){
         int[] a = {};
         int[] b = {5};
@@ -139,6 +197,14 @@ public class Eksamensoppgaver {
         System.out.println("Snitt: "+Arrays.toString(snitt(e, f)));
 
         System.out.println(fjernDublikater(d));
+
+        char[] charlist = {'d','S','l','A','B','e'};
+        System.out.println(omorganisert(charlist));
+
+        int[] temp = {2, 3, 5, 7, 10, 12, 12, 15, 18, 20};
+        int num = 16;
+
+        System.out.println(finn(temp,num));
     }
 }
 
